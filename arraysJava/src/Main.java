@@ -1,9 +1,20 @@
 public static void main(String[] args) {
     String[] listaNomes = new String[3];
+
     Scanner scanner = new Scanner(System.in);
+
+    lerTresNomes(scanner)
+
+    escolherNomes(scanner, listaNomes)
+}
+
+public static String[] lerTresNomes(Scanner scanner) {
+
+    String[] listaNomes = new String[3];
 
     while(true) {
         System.out.println("Digite 3 nomes, em sequência: ");
+
         String dividirNomes = scanner.nextLine();
 
         listaNomes = dividirNomes.split("[ ,]+");
@@ -16,10 +27,15 @@ public static void main(String[] args) {
             System.out.println("Você digitou menos de 3 nomes, precisamos que digite 3.");
         }
     }
+}
+
+public static void escolherNomes (Scanner scanner, String[] listaNomes) {
 
     while(true){
         System.out.println("Você deseja imprimir qual nome da lista (primeiro, segundo, terceiro, todos): ");
+
         String resposta = scanner.nextLine().trim();
+
         if (resposta.equals("primeiro")) {
             System.out.println(listaNomes[0]);
             break;
@@ -39,7 +55,6 @@ public static void main(String[] args) {
         }
     }
 }
-
 
 
 
